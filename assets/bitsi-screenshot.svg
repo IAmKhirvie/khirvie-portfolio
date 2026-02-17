@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#111118"/>
+  <rect x="40" y="30" width="300" height="14" rx="7" fill="#06b6d4" opacity="0.4"/>
+  <rect x="40" y="70" width="580" height="320" rx="12" fill="#1a1a28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="70" y="100" width="250" height="60" rx="8" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="195" y="128" text-anchor="middle" font-family="monospace" font-size="11" fill="#22c55e" opacity="0.7">BUS 101</text>
+  <text x="195" y="148" text-anchor="middle" font-family="monospace" font-size="9" fill="#22c55e" opacity="0.5">DEPARTED</text>
+  <rect x="340" y="100" width="250" height="60" rx="8" fill="#06b6d4" opacity="0.1" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="465" y="128" text-anchor="middle" font-family="monospace" font-size="11" fill="#06b6d4" opacity="0.7">BUS 204</text>
+  <text x="465" y="148" text-anchor="middle" font-family="monospace" font-size="9" fill="#06b6d4" opacity="0.5">EN ROUTE</text>
+  <rect x="70" y="180" width="250" height="60" rx="8" fill="#7c3aed" opacity="0.1" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="195" y="208" text-anchor="middle" font-family="monospace" font-size="11" fill="#7c3aed" opacity="0.7">BUS 307</text>
+  <text x="195" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#7c3aed" opacity="0.5">SCHEDULED</text>
+  <rect x="340" y="180" width="250" height="60" rx="8" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="465" y="208" text-anchor="middle" font-family="monospace" font-size="11" fill="#f59e0b" opacity="0.7">BUS 115</text>
+  <text x="465" y="228" text-anchor="middle" font-family="monospace" font-size="9" fill="#f59e0b" opacity="0.5">ARRIVED</text>
+  <rect x="660" y="70" width="560" height="320" rx="12" fill="#1a1a28" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="640" y="500" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#94a3b8" opacity="0.5">Replace with actual screenshot</text>
+  <text x="640" y="540" text-anchor="middle" font-family="monospace" font-size="14" fill="#06b6d4" opacity="0.4">assets/bitsi-screenshot.png</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <rect width="1280" height="800" fill="#111118"/>
+  <circle cx="640" cy="200" r="50" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="640" y="210" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="32" fill="#f59e0b" opacity="0.7">B</text>
+  <text x="640" y="290" text-anchor="middle" font-family="monospace" font-size="18" fill="#f8fafc" opacity="0.6">12,450.00 BBC</text>
+  <rect x="480" y="320" width="130" height="40" rx="8" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="545" y="345" text-anchor="middle" font-family="monospace" font-size="12" fill="#f59e0b" opacity="0.7">Send</text>
+  <rect x="670" y="320" width="130" height="40" rx="8" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="735" y="345" text-anchor="middle" font-family="monospace" font-size="12" fill="#f59e0b" opacity="0.7">Receive</text>
+  <polyline points="200,550 300,520 400,530 500,480 600,500 700,440 800,460 900,410 1000,420 1080,400" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.6"/>
+  <text x="640" y="650" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#94a3b8" opacity="0.5">Replace with actual screenshot</text>
+  <text x="640" y="690" text-anchor="middle" font-family="monospace" font-size="14" fill="#f59e0b" opacity="0.4">assets/bbc-screenshot.png</text>
+</svg>

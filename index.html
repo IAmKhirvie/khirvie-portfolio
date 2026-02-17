@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khirvie — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer building web applications with Laravel, Next.js, and blockchain technologies.">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Khirvie — Full-Stack Developer">
+  <meta property="og:description" content="Full-stack developer building web applications with Laravel, Next.js, and blockchain technologies.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cursor glow (desktop only) -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Particle canvas -->
+  <div id="particles-wrapper" aria-hidden="true">
+    <canvas id="particles"></canvas>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a class="nav-logo" href="#hero" aria-label="Back to top">KH<span class="logo-dot">.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-drawer" id="mobile-nav" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <div class="hero-content container">
+        <div class="hero-text">
+          <span class="hero-eyebrow" data-reveal>// Full-Stack Developer</span>
+          <h1 class="hero-title" data-reveal data-delay="100">
+            Hi, I'm <span class="hero-name gradient-text">Khirvie</span>
+          </h1>
+          <p class="hero-tagline" data-reveal data-delay="200">
+            I build things that <span id="typed-text" class="gradient-text-alt"></span><span class="typed-cursor">|</span>
+          </p>
+          <p class="hero-bio" data-reveal data-delay="300">
+            Crafting full-stack web applications and exploring blockchain technology.
+            Passionate about turning ideas into polished, real-world products.
+          </p>
+          <div class="hero-cta" data-reveal data-delay="400">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Work</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+          <div class="hero-stats" data-reveal data-delay="500">
+            <div class="stat">
+              <span class="stat-number" data-target="4">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-label">Frameworks</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="20">0</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" data-reveal data-delay="300">
+          <div class="code-card">
+            <div class="code-card-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-filename">portfolio.js</span>
+            </div>
+            <pre class="code-card-body"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-key">name</span>: <span class="code-string">"Khirvie"</span>,
+  <span class="code-key">stack</span>: [<span class="code-string">"Laravel"</span>, <span class="code-string">"Next.js"</span>,
+          <span class="code-string">"Solidity"</span>],
+  <span class="code-key">passion</span>: <span class="code-string">"Building products"</span>,
+  <span class="code-key">available</span>: <span class="code-bool">true</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+      <!-- Background orbs -->
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">// Featured Work</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Real-world applications built from the ground up</p>
+        </div>
+
+        <!-- Featured: EPAS-E -->
+        <article class="project-card project-featured" data-reveal data-delay="100">
+          <div class="project-visual">
+            <div class="browser-frame">
+              <div class="browser-chrome">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="browser-url">epas-e.app/dashboard</span>
+              </div>
+              <!-- To swap: replace src with your own screenshot (png/jpg) -->
+              <div class="browser-viewport">
+                <img src="assets/epas-screenshot.svg" alt="EPAS-E LMS Dashboard" loading="lazy" class="project-screenshot">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Featured Project</span>
+            <h3 class="project-title">EPAS-E LMS</h3>
+            <p class="project-description">
+              A full-featured Learning Management System built for Technical-Vocational Education (TVET)
+              programs in the Philippines, aligned with TESDA NC II certification standards.
+            </p>
+            <ul class="project-features">
+              <li>9 question types with auto-grading engine</li>
+              <li>Gamification: points, badges, leaderboards</li>
+              <li>PDF certificates with QR code verification</li>
+              <li>PWA with offline support + push notifications</li>
+              <li>Analytics dashboards + full audit logging</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-badge">Laravel 12</span>
+              <span class="tech-badge">Blade</span>
+              <span class="tech-badge">Alpine.js</span>
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Bootstrap 5</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/IAmKhirvie/EPAS-E" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>Source Code</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Grid: BITSI + BBC -->
+        <div class="projects-grid">
+          <!-- BITSI Dispatch -->
+          <article class="project-card" data-reveal data-delay="200">
+            <div class="project-visual">
+              <div class="browser-frame">
+                <div class="browser-chrome">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="browser-url">bitsi-dispatch.app</span>
+                </div>
+                <!-- To swap: replace src with your own screenshot (png/jpg) -->
+                <div class="browser-viewport">
+                  <img src="assets/bitsi-screenshot.svg" alt="BITSI Dispatch Board" loading="lazy" class="project-screenshot">
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">BITSI Dispatch</h3>
+              <p class="project-description">
+                Real-time bus dispatch management system for Bicol Isarog Transport System Inc.
+                Digitizes daily bus operations with live status tracking.
+              </p>
+              <ul class="project-features">
+                <li>Live Livewire dispatch board</li>
+                <li>SMS notifications via Semaphore API</li>
+                <li>Driver attendance + fleet management</li>
+                <li>Excel/PDF report exports</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge tech-badge--cyan">Laravel 12</span>
+                <span class="tech-badge tech-badge--cyan">Livewire 3</span>
+                <span class="tech-badge tech-badge--cyan">Jetstream</span>
+                <span class="tech-badge tech-badge--cyan">Tailwind CSS</span>
+                <span class="tech-badge tech-badge--cyan">MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/IAmKhirvie/bitsi-dispatch" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BBC Wallet -->
+          <article class="project-card" data-reveal data-delay="300">
+            <div class="project-visual">
+              <div class="browser-frame">
+                <div class="browser-chrome">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="browser-url">bbc-wallet.app</span>
+                </div>
+                <!-- To swap: replace src with your own screenshot (png/jpg) -->
+                <div class="browser-viewport">
+                  <img src="assets/bbc-screenshot.svg" alt="BBC Wallet Dashboard" loading="lazy" class="project-screenshot">
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">BBC Wallet App</h3>
+              <p class="project-description">
+                Educational blockchain wallet featuring a custom ERC-20 token (BigBlackCoin)
+                with MetaMask integration and simulated market monitoring.
+              </p>
+              <ul class="project-features">
+                <li>Custom ERC-20 token smart contract</li>
+                <li>MetaMask wallet connection</li>
+                <li>Mock price oracle + market charts</li>
+                <li>Multi-currency display + QR codes</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge tech-badge--amber">Next.js 14</span>
+                <span class="tech-badge tech-badge--amber">React 18</span>
+                <span class="tech-badge tech-badge--amber">Solidity</span>
+                <span class="tech-badge tech-badge--amber">Hardhat</span>
+                <span class="tech-badge tech-badge--amber">ethers.js</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/IAmKhirvie/bbc-wallet-app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- POS System -->
+          <article class="project-card" data-reveal data-delay="400">
+            <div class="project-visual">
+              <div class="browser-frame">
+                <div class="browser-chrome">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <span class="browser-url">hghmnds-pos.app</span>
+                </div>
+                <!-- To swap: replace src with your own screenshot (png/jpg) -->
+                <div class="browser-viewport">
+                  <img src="assets/pos-screenshot.svg" alt="POS System Dashboard" loading="lazy" class="project-screenshot">
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">HGHMNDS POS</h3>
+              <p class="project-description">
+                A Point of Sale system for product and transaction management
+                with inventory tracking and sales reporting.
+              </p>
+              <ul class="project-features">
+                <li>Product & inventory management</li>
+                <li>Transaction processing</li>
+                <li>Sales reporting & history</li>
+                <li>Admin dashboard</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-badge tech-badge--green">Python</span>
+                <span class="tech-badge tech-badge--green">Django</span>
+                <span class="tech-badge tech-badge--green">SQLite</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/IAmKhirvie/POS" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">// Tech Stack</span>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">Technologies I work with</p>
+        </div>
+
+        <!-- Certification -->
+        <div class="cert-banner" data-reveal data-delay="50">
+          <div class="cert-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <div class="cert-info">
+            <span class="cert-label">Certification</span>
+            <span class="cert-name">Cisco Certified Network Associate (CCNA)</span>
+          </div>
+        </div>
+
+        <div class="skills-layout">
+          <!-- Skill categories -->
+          <div class="skill-categories">
+            <div class="skill-category" data-reveal data-delay="100">
+              <h3 class="skill-category-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                Programming Languages
+              </h3>
+              <div class="skill-items">
+                <div class="skill-item"><span class="skill-name">PHP / Laravel</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Python / Django</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Java</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">C++ / C#</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Rust</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-reveal data-delay="200">
+              <h3 class="skill-category-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Frontend / JS Frameworks
+              </h3>
+              <div class="skill-items">
+                <div class="skill-item"><span class="skill-name">JavaScript / TypeScript</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">React / Next.js</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Vue.js / Vite</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Livewire / Alpine.js</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-reveal data-delay="300">
+              <h3 class="skill-category-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Blockchain / Web3
+              </h3>
+              <div class="skill-items">
+                <div class="skill-item"><span class="skill-name">Solidity / Hardhat</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">ethers.js / Web3</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-reveal data-delay="350">
+              <h3 class="skill-category-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z"/></svg>
+                3D / Game Dev / IoT
+              </h3>
+              <div class="skill-items">
+                <div class="skill-item"><span class="skill-name">Blender</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Unity (C#)</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Unreal Engine</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Arduino Uno</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span><span class="dot-empty"></span></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category" data-reveal data-delay="400">
+              <h3 class="skill-category-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                Tools & Infrastructure
+              </h3>
+              <div class="skill-items">
+                <div class="skill-item"><span class="skill-name">Tailwind CSS / Bootstrap</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span></div></div>
+                <div class="skill-item"><span class="skill-name">MySQL / SQLite</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">Networking (CCNA)</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+                <div class="skill-item"><span class="skill-name">REST APIs / PWA</span><div class="skill-dots"><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-filled"></span><span class="dot-empty"></span></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hex grid -->
+          <div class="hex-grid" data-reveal data-delay="200">
+            <div class="hex" data-color="purple"><span>PHP</span></div>
+            <div class="hex" data-color="cyan"><span>JS</span></div>
+            <div class="hex" data-color="purple"><span>TS</span></div>
+            <div class="hex" data-color="amber"><span>Sol</span></div>
+            <div class="hex" data-color="cyan"><span>Py</span></div>
+            <div class="hex" data-color="purple"><span>C++</span></div>
+            <div class="hex" data-color="green"><span>C#</span></div>
+            <div class="hex" data-color="amber"><span>Java</span></div>
+            <div class="hex" data-color="cyan"><span>Vue</span></div>
+            <div class="hex" data-color="purple"><span>SQL</span></div>
+            <div class="hex" data-color="amber"><span>Rust</span></div>
+            <div class="hex" data-color="green"><span>UE5</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-eyebrow">// Journey</span>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">My development timeline</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" data-reveal data-delay="100">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2024 &mdash; Present</span>
+              <h3 class="timeline-role">Full-Stack Developer</h3>
+              <span class="timeline-org">Freelance / Independent Projects</span>
+              <p class="timeline-desc">
+                Developing production-grade web applications for real-world clients and institutions.
+                Built EPAS-E LMS for TVET education, BITSI Dispatch for a regional transport company,
+                and explored blockchain development with the BBC Wallet project.
+              </p>
+              <div class="timeline-tags">
+                <span>Laravel</span>
+                <span>Next.js</span>
+                <span>Solidity</span>
+                <span>Livewire</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal data-delay="200">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2022 &mdash; 2024</span>
+              <h3 class="timeline-role">BS Information Technology</h3>
+              <span class="timeline-org">University</span>
+              <p class="timeline-desc">
+                Studied software development, database management, and networking.
+                Built foundational projects using PHP, Python, and JavaScript.
+                Developed EPAS-E as a capstone project.
+              </p>
+              <div class="timeline-tags">
+                <span>PHP</span>
+                <span>Python</span>
+                <span>MySQL</span>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal data-delay="300">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2021 &mdash; 2022</span>
+              <h3 class="timeline-role">Self-Taught Programming</h3>
+              <span class="timeline-org">Independent Learning</span>
+              <p class="timeline-desc">
+                Started learning web development through online resources.
+                Built initial projects with HTML, CSS, JavaScript, and PHP.
+                Discovered Laravel and never looked back.
+              </p>
+              <div class="timeline-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>PHP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-text" data-reveal>
+            <span class="section-eyebrow">// Get in Touch</span>
+            <h2 class="section-title">Let's build<br><span class="gradient-text">something together.</span></h2>
+            <p class="contact-description">
+              I'm always interested in new opportunities, collaborations,
+              or just a good conversation about tech.
+            </p>
+            <div class="contact-links">
+              <a href="https://github.com/IAmKhirvie" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>github.com/IAmKhirvie</span>
+              </a>
+              <a href="mailto:your.email@example.com" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>your.email@example.com</span>
+              </a>
+              <a href="https://linkedin.com/in/khirvie" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span>linkedin.com/in/khirvie</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card" data-reveal data-delay="200">
+            <div class="availability-indicator">
+              <span class="availability-dot"></span>
+              <span>Available for opportunities</span>
+            </div>
+            <h3>Let's Talk</h3>
+            <p>Whether it's a project, job opportunity, or just a chat — I'd love to hear from you.</p>
+            <a href="mailto:your.email@example.com" class="btn btn-primary btn-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Send me an email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; 2025 Khirvie. Designed &amp; built by Khirvie.</p>
+      <div class="footer-links">
+        <a href="https://github.com/IAmKhirvie" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/khirvie" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:your.email@example.com" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
