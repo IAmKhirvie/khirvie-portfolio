@@ -163,23 +163,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     if (!sections.length || !navLinks.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.removeAttribute('aria-current');
-            if (link.getAttribute('href') === `#${entry.target.id}`) {
-              link.setAttribute('aria-current', 'page');
-            }
-          });
+    function update() {
+      let current = '';
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= 150) {
+          current = section.id;
         }
       });
-    }, {
-      threshold: 0.3,
-      rootMargin: '-80px 0px -50% 0px'
-    });
 
-    sections.forEach(s => observer.observe(s));
+      navLinks.forEach(link => {
+        link.removeAttribute('aria-current');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
 
   // ===== NAVBAR SCROLL STATE =====
