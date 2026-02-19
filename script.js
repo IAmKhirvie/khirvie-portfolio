@@ -165,11 +165,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function update() {
       let current = '';
-      sections.forEach(section => {
-        if (section.getBoundingClientRect().top <= 150) {
-          current = section.id;
-        }
-      });
+
+      // If scrolled to bottom, highlight the last section
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 50);
+      if (atBottom) {
+        current = sections[sections.length - 1].id;
+      } else {
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top <= 150) {
+            current = section.id;
+          }
+        });
+      }
 
       navLinks.forEach(link => {
         link.removeAttribute('aria-current');
