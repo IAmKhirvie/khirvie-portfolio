@@ -277,6 +277,131 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  // ===== HEX HONEYCOMB GRID =====
+  const HexGrid = (() => {
+    const grid = document.querySelector('.hex-grid');
+    if (!grid) return;
+
+    // Hex sizes per skill level
+    const dims = {
+      '5': { w: 130, h: 150 },
+      '4': { w: 92,  h: 106 },
+      '3': { w: 72,  h: 83 },
+      '2': { w: 56,  h: 64 }
+    };
+
+    // Grid spacing — based on L4 (most common size)
+    const COL = 94;
+    const ROW = 82;
+
+    // 4 rows × 6 hexes = 24 skills — rectangular honeycomb
+    // Odd rows offset by COL/2 for alternating pattern:
+    //   - - - - - -
+    //    - - - - - -
+    //   - - - - - -
+    //    - - - - - -
+    const rows = [
+      [
+        ['Vue','3','cyan','Vue.js / Vite','Reactive frontends and SPAs with Vue.js and Vite bundler.',['EPAS-E']],
+        ['Git','4','cyan','Git / GitHub','Version control on every project — branching, PRs, and collaboration.',['All Projects']],
+        ['PHP','4','purple','PHP / Laravel','My primary backend. Production Laravel apps with Eloquent, Livewire, and queues.',['EPAS-E','BITSI Dispatch']],
+        ['JS','4','cyan','JavaScript','Core to every project — DOM manipulation, async patterns, and interactive features.',['EPAS-E','BBC Wallet','ICAN']],
+        ['TS','4','purple','TypeScript','Type-safe React and Next.js apps for larger, maintainable codebases.',['ICAN Knowledge','Payroll']],
+        ['React','3','cyan','React / Next.js','React 18/19 with hooks and component architecture for dynamic UIs.',['BBC Wallet','Payroll']]
+      ],
+      [
+        ['Py','3','cyan','Python / Flask','Flask APIs, AI/ML pipelines, data processing, and automation scripts.',['YouTube Uploader','Quiz Platform','Classroom AI']],
+        ['Net','4','green','Networking','CCNA-certified network config — routers, switches, VLANs, and ACLs.',['CCNA Certified']],
+        ['CSS','5','purple','CSS / Tailwind','My strongest skill — every project I build gets polished with Tailwind CSS or Bootstrap.',['All Projects']],
+        ['SQL','4','purple','MySQL / PostgreSQL','Database design, query optimization, and migrations across all projects.',['EPAS-E','BITSI','Payroll']],
+        ['API','4','cyan','REST APIs','API design and integrations — YouTube, Notion, Semaphore SMS, and more.',['YouTube Uploader','Quiz Platform']],
+        ['Sol','3','amber','Solidity','ERC-20 token smart contracts, Hardhat testing, and Ethereum deployment.',['BBC Wallet']]
+      ],
+      [
+        ['Rust','2','amber','Rust','Exploring systems programming — memory safety and high-performance code.',['Learning']],
+        ['C++','3','purple','C++ / C#','Systems programming, memory management, and Arduino embedded development.',['Academic','Arduino']],
+        ['AI','3','purple','AI / ML','Computer vision with MediaPipe/OpenCV and LLM integration with Ollama.',['Classroom AI','Quiz Platform']],
+        ['YOLO','3','cyan','YOLOv8','Real-time object detection — 77% accuracy in classroom behavior monitoring.',['Classroom AI']],
+        ['Java','3','amber','Java','OOP design patterns, data structures, and application development.',['Academic Projects']],
+        ['Docker','2','cyan','Docker','Containerized dev environments and deployment with docker-compose.',['Dev Environments']]
+      ],
+      [
+        ['UE5','2','green','Unreal Engine 5','3D environments and game prototyping with Blueprints and C++.',['Game Prototypes']],
+        ['HW','4','green','PC Assembly','Hardware builds, component diagnostics, upgrades, and hands-on repair.',['IT Support']],
+        ['OS','4','green','OS Installation','Windows and Linux installation, dual-boot, imaging, and recovery.',['IT Support']],
+        ['Cable','4','green','Structured Cabling','RJ45 crimping, patch panels, and network infrastructure setup.',['Network Setup']],
+        ['Trbl','4','green','Troubleshooting','Systematic hardware and software troubleshooting and diagnostics.',['IT Support']],
+        ['Linux','3','green','Linux / Server','Server setup, shell scripting, and deployment on Ubuntu/Debian.',['Server Deployments']]
+      ]
+    ];
+
+    // Compute grid positions — absolute honeycomb (no per-row centering)
+    // Even rows: x = ci * COL
+    // Odd rows:  x = ci * COL + COL/2 (half-column offset)
+    // Bounding box centers the whole grid
+    const items = [];
+    rows.forEach((row, ri) => {
+      const offset = (ri % 2 === 1) ? COL / 2 : 0;
+      row.forEach((cell, ci) => {
+        const [label, level, color, name, desc, projects] = cell;
+        const d = dims[level];
+        const x = ci * COL + offset;
+        const y = ri * ROW;
+        items.push({ label, level, color, name, desc, projects, w: d.w, h: d.h, x, y });
+      });
+    });
+
+    // Bounding box — use actual hex sizes
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    items.forEach(p => {
+      minX = Math.min(minX, p.x - p.w / 2);
+      maxX = Math.max(maxX, p.x + p.w / 2);
+      minY = Math.min(minY, p.y - p.h / 2);
+      maxY = Math.max(maxY, p.y + p.h / 2);
+    });
+
+    grid.style.width  = (maxX - minX) + 'px';
+    grid.style.height = (maxY - minY) + 'px';
+
+    // Tooltip
+    const tip = document.createElement('div');
+    tip.className = 'hex-tooltip';
+    document.body.appendChild(tip);
+
+    // Create hex elements — each centered at its grid point with its actual size
+    items.forEach(p => {
+      const el = document.createElement('div');
+      el.className = 'hex';
+      el.dataset.level = p.level;
+      el.dataset.color = p.color;
+      el.innerHTML = `<span>${p.label}</span>`;
+      el.style.width  = p.w + 'px';
+      el.style.height = p.h + 'px';
+      el.style.left   = (p.x - minX - p.w / 2) + 'px';
+      el.style.top    = (p.y - minY - p.h / 2) + 'px';
+      grid.appendChild(el);
+
+      el.addEventListener('mouseenter', () => {
+        tip.innerHTML =
+          `<h4>${p.name}</h4>` +
+          `<p>${p.desc}</p>` +
+          `<div class="tooltip-projects">${p.projects.map(t => `<span class="tooltip-tag">${t}</span>`).join('')}</div>`;
+        const rect = el.getBoundingClientRect();
+        let top = rect.top + window.scrollY - 160;
+        let left = rect.left + window.scrollX + rect.width / 2 - 140;
+        if (top < window.scrollY + 10) top = rect.bottom + window.scrollY + 12;
+        left = Math.max(10, Math.min(left, window.innerWidth - 290));
+        tip.style.top  = top + 'px';
+        tip.style.left = left + 'px';
+        tip.classList.add('visible');
+      });
+
+      el.addEventListener('mouseleave', () => {
+        tip.classList.remove('visible');
+      });
+    });
+  })();
+
   // ===== SMOOTH SCROLL =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
