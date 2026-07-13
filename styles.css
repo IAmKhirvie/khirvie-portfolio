@@ -24,11 +24,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 12% 8%, rgba(255, 42, 142, 0.16), transparent 28%),
     radial-gradient(circle at 88% 12%, rgba(51, 245, 255, 0.13), transparent 25%),
@@ -253,11 +255,22 @@ h3 {
 .body-large {
   color: var(--muted);
   font-size: 1.08rem;
+  overflow-wrap: break-word;
 }
 
 .hero-copy {
+  width: 100%;
   max-width: 690px;
   margin-bottom: 34px;
+}
+
+.hero-copy-block {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.eyebrow {
+  overflow-wrap: break-word;
 }
 
 .hero-actions,
@@ -265,6 +278,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.hero > *,
+.split-section > *,
+.project-card > *,
+.language-board > *,
+.contact-section > * {
+  min-width: 0;
 }
 
 .button {
@@ -310,9 +331,11 @@ h3 {
 .about-visual,
 .language-board {
   position: relative;
-  border: 1px solid var(--line);
-  background: var(--card);
-  box-shadow: var(--shadow);
+  border: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
+    var(--card);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.32);
 }
 
 .hero-panel::before,
@@ -321,21 +344,25 @@ h3 {
 .language-board::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
   pointer-events: none;
-  border-top: 2px solid rgba(255, 42, 142, 0.65);
-  border-left: 2px solid rgba(51, 245, 255, 0.42);
+  background: linear-gradient(180deg, rgba(255, 42, 142, 0.75), rgba(51, 245, 255, 0.55));
 }
 
 .hero-panel {
   padding: 24px;
-  transform: rotate(0.7deg);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .panel-topline,
 .site-footer {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--muted);
   font-family: "JetBrains Mono", monospace;
@@ -350,16 +377,21 @@ h3 {
 .profile-card {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   margin: 28px 0;
   padding: 18px;
-  border: 1px dashed rgba(246, 240, 255, 0.22);
   background: rgba(8, 7, 13, 0.62);
+}
+
+.profile-card > div {
+  min-width: 0;
 }
 
 .profile-card strong,
 .profile-card span {
   display: block;
+  overflow-wrap: anywhere;
 }
 
 .profile-card span {
@@ -386,8 +418,8 @@ h3 {
 .metric-grid div {
   min-height: 100px;
   padding: 17px;
-  border: 1px solid rgba(246, 240, 255, 0.12);
   background: rgba(8, 7, 13, 0.48);
+  box-shadow: inset 3px 0 0 rgba(215, 255, 56, 0.34);
 }
 
 .metric-grid span,
@@ -449,15 +481,16 @@ h3 {
   display: grid;
   place-items: center;
   overflow: hidden;
-  transform: rotate(-0.55deg);
 }
 
 .about-visual::before {
   content: "";
   position: absolute;
   inset: 36px;
-  border: 1px dashed rgba(215, 255, 56, 0.34);
-  transform: rotate(5deg);
+  background:
+    linear-gradient(90deg, rgba(215, 255, 56, 0.1), transparent 45%),
+    linear-gradient(180deg, rgba(51, 245, 255, 0.08), transparent 55%);
+  transform: none;
 }
 
 .portrait-placeholder {
@@ -465,11 +498,9 @@ h3 {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 42, 142, 0.4);
   background:
     linear-gradient(135deg, rgba(255, 42, 142, 0.2), rgba(51, 245, 255, 0.12)),
     #100812;
-  transform: rotate(3deg);
 }
 
 .portrait-placeholder span {
@@ -480,7 +511,7 @@ h3 {
   font-weight: 800;
 }
 
-.chaos-note {
+.profile-note {
   position: absolute;
   left: 24px;
   bottom: 24px;
@@ -504,8 +535,8 @@ h3 {
 
 .stats-row div {
   padding: 18px;
-  border: 1px solid var(--line);
   background: rgba(20, 18, 30, 0.64);
+  box-shadow: inset 0 2px 0 rgba(255, 42, 142, 0.32);
 }
 
 .stats-row strong,
@@ -535,13 +566,13 @@ h3 {
   gap: 32px;
   align-items: stretch;
   padding: 24px;
-  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 42, 142, 0.5);
   background: rgba(23, 19, 31, 0.95);
+  box-shadow: 0 26px 78px rgba(0, 0, 0, 0.42);
 }
 
 .project-card.is-reversed {
@@ -558,10 +589,10 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  border: 1px dashed rgba(246, 240, 255, 0.24);
   background:
     linear-gradient(135deg, rgba(255, 42, 142, 0.12), transparent 55%),
     rgba(8, 7, 13, 0.64);
+  box-shadow: inset 0 0 0 1px rgba(246, 240, 255, 0.06);
 }
 
 .project-code span {
@@ -631,8 +662,8 @@ h3 {
 
 .language-primary {
   padding: 20px;
-  border: 1px dashed rgba(215, 255, 56, 0.32);
   background: rgba(8, 7, 13, 0.5);
+  box-shadow: inset 3px 0 0 rgba(215, 255, 56, 0.42);
 }
 
 .language-primary span {
@@ -678,12 +709,13 @@ h3 {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .repo-card:hover {
   transform: translate(-2px, -2px);
-  border-color: rgba(215, 255, 56, 0.5);
+  background: rgba(23, 19, 31, 0.96);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.34);
 }
 
 .repo-card > span {
@@ -925,7 +957,8 @@ h3 {
   .nav-shell,
   .section,
   .site-footer {
-    width: min(100% - 28px, var(--max));
+    width: calc(100% - 28px);
+    max-width: var(--max);
   }
 
   .section {
@@ -935,6 +968,11 @@ h3 {
   .hero {
     min-height: auto;
     padding-top: 64px;
+  }
+
+  .hero-copy,
+  .eyebrow {
+    max-width: calc(100vw - 48px);
   }
 
   .hero-actions,
@@ -963,6 +1001,31 @@ h3 {
   .repo-card,
   .cert-card {
     padding: 18px;
+  }
+
+  h1 {
+    font-size: clamp(3.3rem, 16vw, 4.4rem);
+  }
+
+  h2 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem);
+  }
+
+  .profile-card {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .profile-card > div,
+  .profile-card strong,
+  .profile-card span {
+    max-width: 100%;
+  }
+
+  .panel-topline {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .project-code {

@@ -1,11 +1,11 @@
 # Khirvie Clifford N. Bautista Portfolio
 
-A static, GitHub Pages-ready portfolio with a chaotic-punk visual direction and public GitHub project data for software developer, full-stack systems builder, and IT specialist roles.
+A static, GitHub Pages-ready portfolio with a professional dark visual direction and public GitHub project data for software developer, full-stack systems builder, and IT specialist roles.
 
 ## Files
 
 - `index.html` - Single-page portfolio markup with public project, language, and certification sections
-- `styles.css` - Chaotic-punk dark UI, responsive layout, and animations
+- `styles.css` - Professional dark UI, responsive layout, and animations
 - `script.js` - Mobile navigation, active section highlighting, scroll reveals, and contact form behavior
 - `resume.html` - Print-friendly ATS resume page linked from the portfolio
 
