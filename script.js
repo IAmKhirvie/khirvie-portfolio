@@ -58,7 +58,7 @@ const formNote = document.querySelector('[data-form-note]');
 
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
-  formNote.textContent = 'Message ready. Connect this form to Formspree, Netlify Forms, or your backend when deployed.';
+  formNote.textContent = 'Message staged. Connect this form to Formspree, Netlify Forms, or your backend before deployment.';
   contactForm.reset();
 });
 
