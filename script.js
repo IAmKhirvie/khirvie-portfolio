@@ -1,11 +1,40 @@
 const header = document.querySelector('[data-header]');
+const themeColor = document.querySelector('meta[name="theme-color"]');
 const navToggle = document.querySelector('[data-nav-toggle]');
 const navLinks = document.querySelector('[data-nav-links]');
 const navItems = [...document.querySelectorAll('.nav-links a')];
+const themeOptions = [...document.querySelectorAll('[data-theme-option]')];
 const sections = navItems
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
 const revealItems = [...document.querySelectorAll('.reveal')];
+const themeColors = {
+  neubrutalist: '#090807',
+  graffiti: '#060506'
+};
+
+const setTheme = (theme) => {
+  const nextTheme = theme === 'graffiti' ? 'graffiti' : 'neubrutalist';
+  document.documentElement.dataset.theme = nextTheme;
+  themeColor?.setAttribute('content', themeColors[nextTheme]);
+
+  themeOptions.forEach((option) => {
+    option.setAttribute('aria-pressed', String(option.dataset.themeOption === nextTheme));
+  });
+
+  try {
+    localStorage.setItem('portfolio-theme', nextTheme);
+  } catch {
+  }
+};
+
+setTheme(document.documentElement.dataset.theme);
+
+themeOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+    setTheme(option.dataset.themeOption);
+  });
+});
 
 const setHeaderState = () => {
   header?.classList.toggle('is-scrolled', window.scrollY > 18);
@@ -14,25 +43,39 @@ const setHeaderState = () => {
 setHeaderState();
 window.addEventListener('scroll', setHeaderState, { passive: true });
 
-const closeNav = () => {
+const closeNav = ({ restoreFocus = false } = {}) => {
+  const focusWasInNav = navLinks?.contains(document.activeElement);
   navLinks?.classList.remove('is-open');
   navToggle?.setAttribute('aria-expanded', 'false');
+
+  if (restoreFocus || focusWasInNav) {
+    navToggle?.focus({ preventScroll: true });
+  }
 };
 
 const toggleNav = () => {
   if (!navLinks || !navToggle) return;
   const isOpen = navLinks.classList.toggle('is-open');
   navToggle.setAttribute('aria-expanded', String(isOpen));
+
+  if (isOpen) {
+    navItems[0]?.focus({ preventScroll: true });
+  } else {
+    navToggle.focus({ preventScroll: true });
+  }
 };
 
 navToggle?.addEventListener('click', toggleNav);
 
 navItems.forEach((link) => {
-  link.addEventListener('click', closeNav);
+  link.addEventListener('click', () => closeNav({ restoreFocus: true }));
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeNav();
+  if (event.key === 'Escape' && navLinks?.classList.contains('is-open')) {
+    event.preventDefault();
+    closeNav({ restoreFocus: true });
+  }
 });
 
 const desktopQuery = window.matchMedia('(min-width: 981px)');

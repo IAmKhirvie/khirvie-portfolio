@@ -7,21 +7,26 @@
 - Loaded references: `redesign-skill.md`, `brutalist-skill.md`, `perfection/README.md`, `designpowers/lane-c-review.md`, and `visual-qa`.
 - UI/UX database lookup: "graffiti punk portfolio visual design" did not return a direct graffiti preset. Useful adjacent rules were high contrast, editorial/brutalist typography, hard borders, paper noise, dramatic hero hierarchy, and non-rounded mechanical surfaces.
 - Chosen direction: graffiti punk zine wall for a systems developer. The remembered moment is a torn-poster hero with sticker CTAs, hazard red marks, acid yellow labels, spray texture, and a raw street-poster project archive.
+- Current extension: the shipped surface is now treated as the **Neubrutalist Portfolio** mode. A second **Graffiti Punk** mode is added as a switchable theme, not a replacement, so users can move back and forth without losing content or navigation state.
 
 ## 1. Atmosphere & Identity
 
-The portfolio should feel like a late-night build log pasted onto a city wall: practical software systems presented through punk flyers, torn paper, black ink, hazard tape, spray marks, and aggressive typography. It must still remain credible for developer hiring, so the punk layer is visual energy, not vague copy.
+The portfolio has two visual modes over the same content.
+
+- **Neubrutalist Portfolio**: the default mode. It reads as a hard-edged systems poster: square panels, offset shadows, cream-on-black contrast, acid labels, hazard red marks, and mechanical project cards. This is the stable, hiring-safe version.
+- **Graffiti Punk**: the alternate mode. It should feel like a spray-painted build wall: concrete darkness, overprinted tags, paint drips, loud magenta/lime/cyan accents, sticker CTAs, and high-contrast stencil energy. It must remain readable and credible, not chaotic decoration.
 
 ### Design Principles
 
 - Keep content direct and specific: systems, repos, stacks, credentials, and role fit stay readable.
 - Let the surface be raw: square corners, offset layers, thick ink marks, torn-paper edges, and visible grid lines.
-- Use graffiti punk as a controlled design language, not random chaos. Every distortion should support hierarchy.
+- Use Graffiti Punk as a controlled alternate language, not random chaos. Every spray mark, glow, and tag should support hierarchy or mode identity.
+- Keep Neubrutalist and Graffiti Punk switchable through one semantic control; do not duplicate page content.
 - Avoid glossy SaaS patterns: no purple-blue AI gradients, no soft glass cards, no rounded pill-heavy layouts.
 
 ## 2. Color
 
-### Palette
+### Shared Palette
 
 | Role | Token | Value | Usage |
 | --- | --- | --- | --- |
@@ -40,6 +45,12 @@ The portfolio should feel like a late-night build log pasted onto a city wall: p
 | Spray teal | `--spray` | `#21ffd2` | Secondary active state |
 | Bruise violet | `--bruise` | `#7a2cff` | Occasional poster shadow |
 | Rust | `--rust` | `#ff7a1a` | Reserved tertiary mark |
+
+### Mode Rules
+
+- Neubrutalist uses the shared palette directly: asphalt, paper, hazard red, acid yellow, spray teal, and hard black shadows.
+- Graffiti Punk overrides the same semantic tokens with louder paint values: black concrete substrate, pink hazard, lime acid, cyan spray, violet bruising, and orange rust. The semantic token names stay stable so components do not fork.
+- The browser `theme-color` follows the active mode: asphalt for Neubrutalist, concrete black for Graffiti Punk.
 
 ### Rules
 
@@ -60,7 +71,7 @@ The portfolio should feel like a late-night build log pasted onto a city wall: p
 
 | Level | Size | Weight | Line Height | Usage |
 | --- | --- | --- | --- | --- |
-| Hero | `clamp(3.1rem, 8.4vw, 7.2rem)` | 900 | 0.86 | First-screen statement |
+| Hero | `clamp(3rem, 7.1vw, 6.2rem)` desktop, `clamp(2.72rem, 13.4vw, 3.45rem)` mobile | 900 | 0.86 | First-screen statement |
 | Section | `clamp(2.65rem, 6vw, 5.4rem)` desktop, `clamp(1.78rem, 9.4vw, 2.8rem)` mobile | 900 | 0.9 | Major sections |
 | Project | `clamp(2rem, 4vw, 3.25rem)` | 900 | 0.95 | Project names |
 | Card title | `1.12rem` to `1.35rem` | 800 | 1.15 | Compact headings |
@@ -104,6 +115,13 @@ Spacing follows a 4px base unit.
 - **States**: scrolled state becomes denser with paper/ink contrast. Active link uses hazard/acid underline block.
 - **Accessibility**: semantic `nav`, labeled mobile toggle, keyboard focus visible.
 
+### Theme Switcher
+
+- **Structure**: compact two-button control labeled "Portfolio theme" with `Neo` and `Punk` buttons.
+- **States**: active mode uses the current accent fill, `aria-pressed="true"`, and persistent `localStorage`.
+- **Behavior**: toggles `html[data-theme="neubrutalist"]` and `html[data-theme="graffiti"]`; no page reload; works from keyboard and mobile.
+- **Accessibility**: 44px minimum target height, visible focus ring, descriptive `aria-label` on each compact button.
+
 ### Buttons
 
 - **Structure**: `.button` sticker blocks with hard border and offset ink shadow.
@@ -127,7 +145,7 @@ Spacing follows a 4px base unit.
 
 - **Structure**: live DOM text collage, not a pasted screenshot. Uses `.graffiti-wall`, `.tag`, and `.tape` primitives.
 - **Purpose**: gives the theme a memorable visual asset while keeping the site lightweight and accessible.
-- **Rules**: decorative text remains `aria-hidden`; real profile data stays in readable DOM nearby.
+- **Rules**: decorative text remains `aria-hidden`; real profile data stays in readable DOM nearby. In Neubrutalist mode it behaves like a controlled poster module; in Graffiti Punk mode it becomes a spray wall with louder color, glow, and paint overlays.
 
 ### Contact Form
 

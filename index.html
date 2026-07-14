@@ -13,7 +13,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=JetBrains+Mono:wght@400;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <script>document.documentElement.classList.add('has-js');</script>
+  <script>
+    document.documentElement.classList.add('has-js');
+    try {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      document.documentElement.dataset.theme = savedTheme === 'graffiti' ? 'graffiti' : 'neubrutalist';
+    } catch {
+      document.documentElement.dataset.theme = 'neubrutalist';
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,11 +33,6 @@
         <strong>Khirvie Bautista</strong>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-        <span></span>
-        <span></span>
-      </button>
-
       <div class="nav-links" data-nav-links>
         <a href="#about">About</a>
         <a href="#systems">Systems</a>
@@ -37,6 +40,17 @@
         <a href="#github">GitHub</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-tools">
+        <div class="theme-switcher" role="group" aria-label="Portfolio theme">
+          <button type="button" data-theme-option="neubrutalist" aria-label="Use Neubrutalist Portfolio theme" aria-pressed="true">Neo</button>
+          <button type="button" data-theme-option="graffiti" aria-label="Use Graffiti Punk theme" aria-pressed="false">Punk</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   </header>
