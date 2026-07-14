@@ -6,6 +6,7 @@
 - Existing UI audit: the site used strong content and functional navigation, but the surface read as conventional dark SaaS: symmetrical panels, smooth cards, soft glows, and predictable neon accents.
 - Loaded references: `redesign-skill.md`, `brutalist-skill.md`, `perfection/README.md`, `designpowers/lane-c-review.md`, and `visual-qa`.
 - UI/UX database lookup: "graffiti punk portfolio visual design" did not return a direct graffiti preset. Useful adjacent rules were high contrast, editorial/brutalist typography, hard borders, paper noise, dramatic hero hierarchy, and non-rounded mechanical surfaces.
+- Live reference added: Freepik "punk graffiti" image results, used only as a visual direction source. Cues to carry forward are distressed texture, rough texture, grungy background, graffiti letters, graffiti print, graffiti banner, zine/newspaper collage, black ink, stencil portrait language, punk symbols, and chaotic hand-lettered poster composition.
 - Chosen direction: graffiti punk zine wall for a systems developer. The remembered moment is a torn-poster hero with sticker CTAs, hazard red marks, acid yellow labels, spray texture, and a raw street-poster project archive.
 - Current extension: the shipped surface is now treated as the **Neubrutalist Portfolio** mode. A second **Graffiti Punk** mode is added as a switchable theme, not a replacement, so users can move back and forth without losing content or navigation state.
 
@@ -14,13 +15,13 @@
 The portfolio has two visual modes over the same content.
 
 - **Neubrutalist Portfolio**: the default mode. It reads as a hard-edged systems poster: square panels, offset shadows, cream-on-black contrast, acid labels, hazard red marks, and mechanical project cards. This is the stable, hiring-safe version.
-- **Graffiti Punk**: the alternate mode. It should feel like a spray-painted build wall: concrete darkness, overprinted tags, paint drips, loud magenta/lime/cyan accents, sticker CTAs, and high-contrast stencil energy. It must remain readable and credible, not chaotic decoration.
+- **Graffiti Punk**: the alternate mode. It should feel like a literal punk-graffiti poster wall: spray-painted tags, marker-letter display type, concrete/brick texture, black stencil ink, mohawk-poster silhouettes, paint drips, sticker slaps, torn flyers, zine/newsprint collage scraps, loud red/pink/cyan/lime/orange paint, and high-contrast punk-symbol energy. It must remain readable and credible, not chaotic decoration.
 
 ### Design Principles
 
 - Keep content direct and specific: systems, repos, stacks, credentials, and role fit stay readable.
 - Let the surface be raw: square corners, offset layers, thick ink marks, torn-paper edges, and visible grid lines.
-- Use Graffiti Punk as a controlled alternate language, not random chaos. Every spray mark, glow, and tag should support hierarchy or mode identity.
+- Use Graffiti Punk as a controlled street-art language, not random chaos. Every spray mark, drip, sticker, wall seam, torn-paper strip, stencil mark, and tag should support hierarchy or mode identity.
 - Keep Neubrutalist and Graffiti Punk switchable through one semantic control; do not duplicate page content.
 - Avoid glossy SaaS patterns: no purple-blue AI gradients, no soft glass cards, no rounded pill-heavy layouts.
 
@@ -50,6 +51,7 @@ The portfolio has two visual modes over the same content.
 
 - Neubrutalist uses the shared palette directly: asphalt, paper, hazard red, acid yellow, spray teal, and hard black shadows.
 - Graffiti Punk overrides the same semantic tokens with louder paint values: black concrete substrate, pink hazard, lime acid, cyan spray, violet bruising, and orange rust. The semantic token names stay stable so components do not fork.
+- Graffiti Punk should lean harder into black/red/cyan/orange punk poster contrast than into polished neon gradients. Paper and newsprint textures are allowed behind decorative layers, but readable content keeps controlled contrast.
 - The browser `theme-color` follows the active mode: asphalt for Neubrutalist, concrete black for Graffiti Punk.
 
 ### Rules
@@ -64,6 +66,7 @@ The portfolio has two visual modes over the same content.
 ### Font Stack
 
 - Display: `Archivo Black`, `Impact`, `Arial Black`, `sans-serif`
+- Graffiti display: `Rubik Spray Paint`, `Archivo Black`, `Impact`, `sans-serif`
 - Body: `Space Grotesk`, `ui-sans-serif`, `system-ui`, `sans-serif`
 - Mono: `JetBrains Mono`, `monospace`
 
@@ -143,9 +146,9 @@ Spacing follows a 4px base unit.
 
 ### Graffiti Wall Hero Asset
 
-- **Structure**: live DOM text collage, not a pasted screenshot. Uses `.graffiti-wall`, `.tag`, and `.tape` primitives.
+- **Structure**: live DOM text collage, not a pasted screenshot. Uses `.street-collage`, `.paste`, `.graffiti-wall`, `.tag`, `.tape`, `.stencil-face`, `.punk-symbol`, drip pseudo-elements, paint splatter overlays, sticker slaps, and wall-seam/newsprint texture primitives.
 - **Purpose**: gives the theme a memorable visual asset while keeping the site lightweight and accessible.
-- **Rules**: decorative text remains `aria-hidden`; real profile data stays in readable DOM nearby. In Neubrutalist mode it behaves like a controlled poster module; in Graffiti Punk mode it becomes a spray wall with louder color, glow, and paint overlays.
+- **Rules**: decorative text remains `aria-hidden`; real profile data stays in readable DOM nearby. In Neubrutalist mode it behaves like a controlled poster module; in Graffiti Punk mode it becomes a literal spray wall with marker lettering, drips, overspray, sticker residue, punk poster symbols, stencil silhouette, and layered torn paper.
 
 ### Contact Form
 
