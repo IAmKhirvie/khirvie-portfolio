@@ -4,6 +4,8 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const navLinks = document.querySelector('[data-nav-links]');
 const navItems = [...document.querySelectorAll('.nav-links a')];
 const themeOptions = [...document.querySelectorAll('[data-theme-option]')];
+const themeGlitch = document.querySelector('[data-theme-glitch]');
+const glitchLabel = document.querySelector('[data-glitch-label]');
 const sections = navItems
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
@@ -12,9 +14,24 @@ const themeColors = {
   neubrutalist: '#090807',
   graffiti: '#060506'
 };
+let themeGlitchTimer;
 
-const setTheme = (theme) => {
+const setTheme = (theme, { animate = false } = {}) => {
   const nextTheme = theme === 'graffiti' ? 'graffiti' : 'neubrutalist';
+  const currentTheme = document.documentElement.dataset.theme === 'graffiti' ? 'graffiti' : 'neubrutalist';
+
+  if (animate && nextTheme !== currentTheme && themeGlitch) {
+    window.clearTimeout(themeGlitchTimer);
+    glitchLabel.textContent = `${currentTheme === 'graffiti' ? 'PUNK' : 'NEO'} -> ${nextTheme === 'graffiti' ? 'PUNK' : 'NEO'}`;
+    glitchLabel.dataset.text = glitchLabel.textContent;
+    themeGlitch.classList.remove('is-active');
+    void themeGlitch.offsetWidth;
+    themeGlitch.classList.add('is-active');
+    themeGlitchTimer = window.setTimeout(() => {
+      themeGlitch.classList.remove('is-active');
+    }, 720);
+  }
+
   document.documentElement.dataset.theme = nextTheme;
   themeColor?.setAttribute('content', themeColors[nextTheme]);
 
@@ -32,7 +49,7 @@ setTheme(document.documentElement.dataset.theme);
 
 themeOptions.forEach((option) => {
   option.addEventListener('click', () => {
-    setTheme(option.dataset.themeOption);
+    setTheme(option.dataset.themeOption, { animate: true });
   });
 });
 
