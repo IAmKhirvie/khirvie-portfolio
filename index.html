@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khirvie Clifford Bautista - Software Developer building practical systems with Laravel.">
+  <meta name="theme-color" content="#05020a">
+  <title>Khirvie Clifford Bautista | Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="pixel-grid" aria-hidden="true"></div>
+  <div id="pixel-cursor" aria-hidden="true"></div>
+  <div id="trail-layer" aria-hidden="true"></div>
+
+  <header class="pixel-nav" data-nav>
+    <a class="nav-brand magnetic glitch-link" href="#top" data-text="KCB.EXE">
+      <img src="assets/KV-03.png" alt="" class="nav-logo">
+      <span>KCB.EXE</span>
+    </a>
+
+    <button class="nav-toggle magnetic" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-menu" id="menu" data-menu aria-label="Main navigation">
+      <a class="magnetic glitch-link" href="#quests" data-text="QUESTS">QUESTS</a>
+      <a class="magnetic glitch-link" href="#stats" data-text="STATS">STATS</a>
+      <a class="magnetic glitch-link" href="#lore" data-text="LORE">LORE</a>
+      <a class="magnetic glitch-link nav-cta" href="#contact" data-text="CONTACT">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main" data-scroll-content>
+    <!-- ===== HERO ===== -->
+    <section class="hero level" id="top">
+      <div class="hero-frame">
+        <div class="hero-copy">
+          <p class="system-line reveal">AVAILABLE FOR OPPORTUNITIES</p>
+          <h1 class="glitch-title shake-zone" data-text="KHIRVIE CLIFFORD BAUTISTA">
+            <span>KHIRVIE</span>
+            <span>CLIFFORD</span>
+            <span>BAUTISTA</span>
+          </h1>
+          <p class="hero-text reveal">
+            Software Developer · Full-Stack Web Developer<br>
+            Building practical software that solves real‑world problems.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="pixel-button magnetic" href="#quests">View Projects</a>
+            <a class="pixel-button ghost magnetic" href="assets/khirvie-bautista-resume.pdf" target="_blank" rel="noreferrer">Load Resume</a>
+            <a class="pixel-button ghost magnetic" href="https://github.com/IAmKhirvie" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <aside class="hero-avatar reveal" aria-label="Pixel avatar of Khirvie Clifford Bautista">
+          <img src="assets/khirvie-pixel-avatar.png" alt="Khirvie Clifford Bautista">
+        </aside>
+      </div>
+
+      <div class="ticker reveal" aria-hidden="true">
+        <div class="ticker-track" data-marquee-track>
+          <div class="ticker-set" data-marquee-set>
+            <span>PHP</span><i></i><span>LARAVEL</span><i></i><span>LIVEWIRE</span><i></i>
+            <span>MYSQL</span><i></i><span>JAVASCRIPT</span><i></i><span>PYTHON</span><i></i>
+            <span>C</span><i></i><span>C++</span><i></i><span>C#</span><i></i>
+            <span>VB.NET</span><i></i><span>TAILWIND CSS</span><i></i><span>BOOTSTRAP</span><i></i>
+            <span>SQL SERVER</span><i></i><span>MONGODB</span><i></i><span>FIREBASE</span><i></i>
+            <span>DOCKER</span><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BIG STATEMENT ===== -->
+    <section class="level dark-level">
+      <p class="big-statement reveal">
+        BUILDING <span>FAST</span> AND <span>USEFUL</span> WEB EXPERIENCES WITH A RETRO
+        SHELL AND MODERN ENGINE.
+      </p>
+    </section>
+
+    <!-- ===== QUESTS (PROJECTS) ===== -->
+    <section class="level quests" id="quests">
+      <div class="section-head reveal">
+        <p class="system-line">QUEST LOG</p>
+        <h2 class="shake-zone">Selected Projects</h2>
+      </div>
+
+      <div class="quest-grid">
+        <!-- EPAS-E -->
+        <a class="quest-card main-quest reveal" href="https://github.com/IAmKhirvie/EPAS-E" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>LARAVEL · LIVEWIRE</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>EPAS-E Learning Management System</h3>
+          <p>
+            LMS for EPAS NC II students with authentication, role management,
+            assessments, competency tracking, certificates, dashboards, and reports.
+          </p>
+          <div class="chips">
+            <span>LARAVEL</span><span>LIVEWIRE</span><span>TAILWIND</span><span>MYSQL</span>
+          </div>
+        </a>
+
+        <!-- BiTSI Dispatch -->
+        <a class="quest-card main-quest reveal" href="https://github.com/IAmKhirvie/bitsi-dispatch" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>LARAVEL · BOOTSTRAP</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>BiTSI Dispatch System</h3>
+          <p>
+            Real‑time bus dispatch management for Bicol Isarog Transport System,
+            featuring scheduling, driver assignment, reporting, and user management.
+          </p>
+          <div class="chips">
+            <span>LARAVEL</span><span>BOOTSTRAP</span><span>MYSQL</span><span>DISPATCH</span>
+          </div>
+        </a>
+
+        <!-- ICAN Attendance & Payroll -->
+        <a class="quest-card main-quest reveal" href="https://github.com/IAmKhirvie/attendance-payroll-new" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>REACT · TYPESCRIPT · FASTAPI</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>ICAN Attendance &amp; Payroll</h3>
+          <p>
+            Biometric data import, automated payroll with deductions, overtime,
+            13th‑month pay, payslip generation, and employee management.
+          </p>
+          <div class="chips">
+            <span>REACT</span><span>TYPESCRIPT</span><span>FASTAPI</span><span>SQLITE</span>
+          </div>
+        </a>
+
+        <!-- ICAN Booking -->
+        <a class="quest-card main-quest reveal" href="https://github.com/IAmKhirvie/icaneduspace-booking-staging" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>LARAVEL · FILAMENT</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>ICAN Eduspace Booking</h3>
+          <p>
+            Classroom booking system with reservations, room/package management,
+            REST API, Korean/English localization, and admin panel.
+          </p>
+          <div class="chips">
+            <span>LARAVEL</span><span>FILAMENT</span><span>TAILWIND</span><span>REST</span>
+          </div>
+        </a>
+
+        <!-- Portfolio -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/khirvie-portfolio" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>LARAVEL · BLADE</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Portfolio Website</h3>
+          <p>
+            Clean, 8‑bit‑themed portfolio built with Laravel and Tailwind.
+            Fully responsive and accessibility‑friendly.
+          </p>
+          <div class="chips">
+            <span>LARAVEL</span><span>BLADE</span><span>TAILWIND</span><span>ALPINE.JS</span>
+          </div>
+        </a>
+
+        <!-- TasteBud -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/tastebud" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>DART · FLUTTER</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>TasteBud</h3>
+          <p>
+            Offline‑first Flutter audio player and music taste organiser for
+            personal listening and library management.
+          </p>
+          <div class="chips">
+            <span>DART</span><span>FLUTTER</span><span>MOBILE</span>
+          </div>
+        </a>
+
+        <!-- Crossword App -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/crossword-app" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>REACT NATIVE · EXPO</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Crossword App</h3>
+          <p>
+            Educational crossword puzzle mobile app for interactive learning and
+            quiz‑style play.
+          </p>
+          <div class="chips">
+            <span>REACT NATIVE</span><span>EXPO</span><span>EDUCATION</span>
+          </div>
+        </a>
+
+        <!-- Fractutor -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/Fractutor" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>JAVA</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Fractutor</h3>
+          <p>
+            Java‑based educational tutoring app for learning support and practice.
+          </p>
+          <div class="chips">
+            <span>JAVA</span><span>EDUCATION</span><span>APP</span>
+          </div>
+        </a>
+
+        <!-- BBC Wallet -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/bbc-wallet-app" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>TYPESCRIPT</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>BBC Wallet App</h3>
+          <p>
+            Educational blockchain wallet with BBC token, built for learning
+            wallet interactions and token flows.
+          </p>
+          <div class="chips">
+            <span>TYPESCRIPT</span><span>BLOCKCHAIN</span><span>WALLET</span>
+          </div>
+        </a>
+
+        <!-- ICAN Knowledge Center -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/ican-Knowledge-center" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>TYPESCRIPT</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>ICAN Knowledge Center</h3>
+          <p>
+            Knowledge base for ICAN learning content, information access, and
+            organised educational resources.
+          </p>
+          <div class="chips">
+            <span>TYPESCRIPT</span><span>KNOWLEDGE BASE</span><span>ICAN</span>
+          </div>
+        </a>
+
+        <!-- Learning Quiz Platform -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/learning-quiz-platform" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>PYTHON</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Learning Quiz Platform</h3>
+          <p>
+            Python‑based quiz platform for learning activities, question flows,
+            and educational assessment.
+          </p>
+          <div class="chips">
+            <span>PYTHON</span><span>QUIZ</span><span>LEARNING</span>
+          </div>
+        </a>
+
+        <!-- Classroom Action Detection -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/classroom-action-detection" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>PYTHON</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Classroom Action Detection</h3>
+          <p>
+            Computer‑vision style analysis for classroom activity detection
+            in educational environments.
+          </p>
+          <div class="chips">
+            <span>PYTHON</span><span>DETECTION</span><span>CLASSROOM</span>
+          </div>
+        </a>
+
+        <!-- YouTube Uploader -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/youtube-uploader" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>HTML</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>YouTube Uploader</h3>
+          <p>
+            Web‑based utility for experimenting with media upload workflows
+            and simple automation.
+          </p>
+          <div class="chips">
+            <span>HTML</span><span>UPLOAD</span><span>UTILITY</span>
+          </div>
+        </a>
+
+        <!-- Resume Analyzer -->
+        <a class="quest-card reveal" href="https://github.com/IAmKhirvie/Resume-Analyzer" target="_blank" rel="noreferrer">
+          <div class="quest-meta">
+            <span>PYTHON</span>
+            <span>GITHUB</span>
+          </div>
+          <h3>Resume Analyzer</h3>
+          <p>
+            Parses and reviews candidate profiles for document‑focused
+            evaluation flows.
+          </p>
+          <div class="chips">
+            <span>PYTHON</span><span>ANALYZER</span><span>DOCUMENTS</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== STATS (SKILLS) ===== -->
+    <section class="level stats" id="stats">
+      <div class="section-head reveal">
+        <p class="system-line">SKILL STATS</p>
+        <h2 class="shake-zone">Practical Stack</h2>
+      </div>
+
+      <div class="stat-layout">
+        <div class="stat-panel reveal">
+          <h3>Programming Languages</h3>
+          <p>Languages I use for web, system, scripting, and academic projects.</p>
+          <ul>
+            <li>PHP, Python, JavaScript</li>
+            <li>C, C++, C#</li>
+            <li>VB.NET</li>
+          </ul>
+        </div>
+
+        <div class="stat-panel reveal">
+          <h3>Web Technologies</h3>
+          <p>Frameworks and UI tools for building responsive, database‑backed apps.</p>
+          <ul>
+            <li>Laravel, Livewire, Node.js</li>
+            <li>Tailwind CSS, Bootstrap</li>
+            <li>HTML, CSS, WordPress</li>
+          </ul>
+        </div>
+
+        <div class="stat-panel reveal">
+          <h3>Databases &amp; Tools</h3>
+          <p>Tools for data management, version control, and environment setup.</p>
+          <ul>
+            <li>MySQL, SQLite, MSSQL</li>
+            <li>MongoDB, Firebase</li>
+            <li>Git, GitHub, Docker, Figma, DBeaver</li>
+          </ul>
+        </div>
+
+        <div class="stat-panel reveal">
+          <h3>Software Development</h3>
+          <p>Core engineering practices for maintainable, real‑world systems.</p>
+          <ul>
+            <li>REST APIs, OOP, system design</li>
+            <li>Agile, Scrum, CI/CD</li>
+            <li>Data structures &amp; algorithms</li>
+          </ul>
+        </div>
+
+        <div class="inventory reveal">
+          <span>PHP</span><span>PYTHON</span><span>JAVASCRIPT</span><span>C</span>
+          <span>C++</span><span>C#</span><span>VB.NET</span><span>LARAVEL</span>
+          <span>LIVEWIRE</span><span>TAILWIND CSS</span><span>BOOTSTRAP</span><span>HTML</span>
+          <span>CSS</span><span>NODE.JS</span><span>WORDPRESS</span><span>MYSQL</span>
+          <span>SQLITE</span><span>MS SQL SERVER</span><span>MONGODB</span><span>FIREBASE</span>
+          <span>GIT</span><span>GITHUB</span><span>DOCKER</span><span>FIGMA</span>
+          <span>DBEAVER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LORE (ABOUT) ===== -->
+    <section class="level lore" id="lore">
+      <div class="lore-window reveal">
+        <div class="window-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>ABOUT.TXT</strong>
+        </div>
+        <div class="terminal-copy">
+          <p>&gt; LOAD PROFILE</p>
+          <h2>Khirvie Clifford N. Bautista</h2>
+          <p>
+            22 years old · BS Information Technology graduate (with Second Honors) from the Philippines.
+          </p>
+          <p>
+            <strong>Awards:</strong> Best in Web Systems, Best in Practicum, 2nd Medalist – Software Business Developer (VB.NET).
+          </p>
+          <p>
+            I specialise in Laravel‑based web development, backend systems, and databases.
+            I enjoy solving complex problems and designing systems that are practical,
+            maintainable, and user‑focused.
+          </p>
+          <p>
+            My process: understand the workflow, map the screens, build the core system,
+            then polish the details until the product feels sharp.
+          </p>
+          <p>
+            I build software that solves real problems — not just because it looks cool.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="level contact" id="contact">
+      <div class="contact-console reveal">
+        <p class="system-line">FINAL STAGE</p>
+        <h2 class="glitch-title small" data-text="LET'S BUILD">LET'S BUILD</h2>
+        <p>
+          Open to developer roles, freelance work, and collaborations.
+          Let’s talk about your next project.
+        </p>
+        <div class="hero-actions">
+          <a class="pixel-button ghost magnetic" href="https://github.com/IAmKhirvie" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="pixel-button ghost magnetic" href="https://www.linkedin.com/in/khirvie-b-356011286/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="pixel-button ghost magnetic" href="assets/khirvie-bautista-resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="pixel-button ghost magnetic" href="khirviecliffordbautista@gmail.com" target="_blank" rel="noreferrer">EMAIL</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>KCB.EXE</span>
+    <a class="glitch-link" href="#top" data-text="RESTART">RESTART</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
